@@ -7,11 +7,10 @@
 //calculate final score
 //
 
-
 import java.util.Random;
 import java.util.Scanner;
 
-public class ArithmeticApp{
+public class ArithmeticApp {
     public static void main(String[] args) {
         Random rand = new Random();
         Scanner input = new Scanner(System.in);
@@ -19,8 +18,8 @@ public class ArithmeticApp{
         int score = 0;
         int totalQuestions = 10;
 
-        for (int count=1;count <= totalQuestions;count++){
-            int num1 = rand.nextInt(91) + 10; 
+        for (int count = 1; count <= totalQuestions; count++) {
+            int num1 = rand.nextInt(91) + 10;
             int num2 = rand.nextInt(num1) + 1;
 
             int correctAnswer = num1 - num2;
@@ -30,26 +29,26 @@ public class ArithmeticApp{
 
             while (attempts > 0) {
                 System.out.print("Your answer: ");
+                int userAnswer = input.nextInt();
 
-                    if (userAnswer == correctAnswer) {
-                        System.out.println("Correct!");
-                        score++;
-                        break;
+                if (userAnswer == correctAnswer) {
+                    System.out.println("Correct!");
+                    score++;
+                    break;
+                } else {
+                    attempts--;
+
+                    if (attempts > 0) {
+                        System.out.println("Wrong! Try again.");
                     } else {
-                        attempts--;
-                        if (attempts > 0) {
-                            System.out.println("Wrong! Try again (" + attempts + " attempt left).");
-                        } else {
-                            System.out.println("Out of attempts! Correct answer is " + correctAnswer);
-                        }
+                        System.out.println("Out of attempts! Correct answer is " + correctAnswer);
                     }
-                    System.out.println("Please enter a valid number.");
                 }
             }
+        }
         System.out.println("Your score: " + score + "/" + totalQuestions);
     }
 }
-
 
 
 
