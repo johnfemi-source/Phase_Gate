@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class ParkingSystem {
 
-    static final int TOTAL_SLOTS = 20;
+    static int TOTAL_SLOTS = 20;
     static int[] slots = new int[TOTAL_SLOTS + 1]; 
 
     public static void main(String[] args) {
